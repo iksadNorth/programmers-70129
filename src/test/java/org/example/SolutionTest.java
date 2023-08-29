@@ -8,20 +8,37 @@ import org.junit.jupiter.api.Test;
 class SolutionTest {
     private final Solution solution = new Solution();
 
-    public void assertAnswer(String s, String answer) {
+    public void assertAnswer(String s, int[] answer) {
         // when
-        String result = solution.solution(s);
+        int[] result = solution.solution(s);
 
         // then
-        Assertions.assertEquals(result, answer);
+        Assertions.assertArrayEquals(result, answer);
     }
 
-    @Disabled
-    @Test @DisplayName("이 메서드는 Mock Up 이다.")
-    void testcase0() {
+    @Test @DisplayName("1")
+    void testcase1() {
         // given
-        String s = "1 2 3 4";
-        String answer = "1 4";
+        String s = "110010101001";
+        int[] answer = new int[]{3,8};
+
+        // when & then
+        assertAnswer(s, answer);
+    }
+    @Test @DisplayName("2")
+    void testcase2() {
+        // given
+        String s = "01110";
+        int[] answer = new int[]{3,3};
+
+        // when & then
+        assertAnswer(s, answer);
+    }
+    @Test @DisplayName("3")
+    void testcase3() {
+        // given
+        String s = "1111111";
+        int[] answer = new int[]{4,1};
 
         // when & then
         assertAnswer(s, answer);
